@@ -1,0 +1,66 @@
+<div class="logout-button-container">
+  <button mat-raised-button color="warn" (click)="logout()">Logout</button>
+</div>
+
+<mat-card>
+  <mat-card-header>
+    <h2>Add Transaction</h2> <br>
+  </mat-card-header>
+  <mat-card-content>
+   
+      
+  <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline" class="full-width">
+     <mat-label>Title</mat-label>
+  <mat-select formControlName="title">
+    <mat-option value="">Select</mat-option>
+    <mat-option value="Expenses">Expenses</mat-option>
+    <mat-option value="Savings">Savings</mat-option>
+  </mat-select>
+      <mat-error *ngIf="transactionForm.get('title')?.touched && transactionForm.get('title')?.invalid">
+        Title is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Amount</mat-label>
+      <input matInput  placeholder="Enter Amount" formControlName="amount" >
+       
+      <mat-error *ngIf="transactionForm.get('amount')?.touched && transactionForm.get('amount')?.invalid">
+</mat-error>
+      </mat-form-field>
+       <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Type</mat-label>
+        <input matInput  placeholder="Enter type" formControlName="type" >
+       
+        <mat-error *ngIf="transactionForm.get('type')?.touched && transactionForm.get('type')?.invalid">
+</mat-error>
+      </mat-form-field>
+       <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Category</mat-label>
+        <input matInput  placeholder="Enter Category" formControlName="category" >
+       
+       <mat-error *ngIf="transactionForm.get('category')?.touched && transactionForm.get('category')?.invalid">
+
+    </mat-error>
+      </mat-form-field>
+       <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Notes</mat-label>
+        <input matInput  placeholder="Enter Notes" formControlName="notes" >
+       
+       <mat-error *ngIf="transactionForm.get('notes')?.touched && transactionForm.get('notes')?.invalid">
+
+    </mat-error>
+      </mat-form-field>
+    <mat-form-field appearance="fill" class="full-width">
+  <mat-label>Date</mat-label>
+  <input matInput [matDatepicker]="picker" formControlName="date">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="isLoading">Add Transaction</button>
+
+  <mat-spinner *ngIf="isLoading" diameter="30"></mat-spinner>
+</form>
+</mat-card-content>
+</mat-card>
