@@ -1,1 +1,60 @@
-<p>dashboard works!</p>
+<div class="logout-button-container">
+  <button mat-raised-button color="warn" (click)="logout()">Logout</button>
+  <button mat-raised-button color="primary" routerLink="transaction-list">Transaction History</button>
+</div>
+
+<mat-card class="dashboard-card">
+  <mat-card-header>
+    <h2>📊 Dashboard</h2>
+  </mat-card-header>
+  <mat-card-content>
+
+    <!-- Date Filters -->
+    <div class="date-filter">
+      <mat-form-field appearance="outline">
+        <mat-label>From Date</mat-label>
+        <input matInput [matDatepicker]="fromPicker" [(ngModel)]="fromDate">
+        <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
+        <mat-datepicker #fromPicker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>To Date</mat-label>
+        <input matInput [matDatepicker]="toPicker" [(ngModel)]="toDate">
+        <mat-datepicker-toggle matSuffix [for]="toPicker"></mat-datepicker-toggle>
+        <mat-datepicker #toPicker></mat-datepicker>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" (click)="filterData()">Apply</button>
+    </div>
+
+    <!-- Chart Toggle -->
+    <div class="chart-toggle-buttons">
+      <button mat-raised-button color="accent" (click)="setChartType('line')">Line Chart</button>
+      <button mat-raised-button color="primary" (click)="setChartType('bar')">Bar Chart</button>
+    </div>
+
+    <!-- Expenses Chart -->
+    <div class="chart-wrapper">
+      <h3>Expenses</h3>
+      <canvas baseChart
+              [type]="chartType"
+              [data]="expensesChartData"
+              [options]="chartOptions">
+      </canvas>
+    </div>
+
+    <br>
+
+    <!-- Savings Chart -->
+    <div class="chart-wrapper">
+      <h3>Savings</h3>
+      <canvas baseChart
+              [type]="chartType"
+              [data]="savingsChartData"
+              [options]="chartOptions">
+      </canvas>
+    </div>
+
+  </mat-card-content>
+</mat-card>

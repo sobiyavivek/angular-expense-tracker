@@ -1,0 +1,34 @@
+.dashboard-card {
+  padding: 16px;
+  margin: 16px;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+}
+
+.date-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+mat-form-field {
+  width: 200px;
+}
+
+.chart-wrapper {
+  width: 100%;
+  height: 400px;
+}
+.chart-toggle-buttons {
+  margin-bottom: 12px;
+  display: flex;
+  gap: 10px;
+}
+.logout-button-container {
+   position: fixed;
+  top: 10px;
+  right: 20px;
+  z-index: 1000;
+}

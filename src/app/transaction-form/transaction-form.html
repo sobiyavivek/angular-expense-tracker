@@ -1,5 +1,7 @@
 <div class="logout-button-container">
   <button mat-raised-button color="warn" (click)="logout()">Logout</button>
+  <button mat-raised-button color="primary " (click)="transHistory()"> Transaction History</button>
+
 </div>
 
 <mat-card>
@@ -59,7 +61,6 @@
 </mat-form-field>
 
   <button mat-raised-button color="primary" type="submit" [disabled]="isLoading">Add Transaction</button>
-
   <mat-spinner *ngIf="isLoading" diameter="30"></mat-spinner>
 </form>
 </mat-card-content>

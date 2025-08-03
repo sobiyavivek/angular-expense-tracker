@@ -17,8 +17,10 @@ export class UserService {
    private storageKey = 'AngularUser';
     private loginKey = 'LoggedInUser';
 
-
+  private apiUrl = 'https://api.openai.com/v1/chat/completions';
   constructor() {}
+  
+  
 
   getUsers(): User[] {
     const storedUsers = localStorage.getItem(this.storageKey);

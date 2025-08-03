@@ -9,14 +9,14 @@
 
       <span class="brand">💰 Finance Tracker</span>
        <button mat-button routerLink="home" appHighLight> Home</button>
-      <button mat-button routerLink="dashboard"> Dashboard</button>
-      <button mat-button routerLink="transaction-form"> Transaction</button>
-      <button mat-button routerLink="register"> Register</button>
-      <button mat-button routerLink="login"> Login</button>
+      <button mat-button routerLink="dashboard" appHighLight> Dashboard</button>
+      <button mat-button routerLink="transaction-form" appHighLight> Transaction</button>
+      <button mat-button routerLink="register" appHighLight> Register</button>
+      <button mat-button routerLink="login" appHighLight> Login</button>
       <mat-slide-toggle
         [checked]="darkMode()"
   (change)="darkMode.set($event.checked)"
-  color="accent"
+  color="accent" 
        > Dark Mode</mat-slide-toggle>
 
       <span class="spacer"></span>

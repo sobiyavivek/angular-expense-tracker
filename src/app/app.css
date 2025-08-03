@@ -15,6 +15,10 @@
   word-break: break-word;
   
 }
+.chat-dialog .mat-dialog-container {
+  padding: 0;
+  border-radius: 12px;
+}
 .container{
 background-color: var(--mat-sys-background);
   color: var(--mat-sys-on-background);
@@ -34,17 +38,6 @@ background-color: var(--mat-sys-background);
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 10px;
-}
-.example-header-image {
-  background-image: url('https://www.moneypatrol.com/moneytalk/wp-content/uploads/2023/06/budget445.png');
-  background-size: cover;
- 
-}
-.example-button-row {
-  max-width: 600px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
 }
 
 .sidenav {

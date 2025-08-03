@@ -53,49 +53,16 @@ logout(): void {
   this.userService.logout();
   this.router.navigate(['/login']);
 }
-  // onSubmit() {
-  //   if (this.transactionForm.invalid) return;
-
-  //   this.isLoading = true;
-
-  //   this.http.get<any[]>(this.apiUrl)
-  //     .pipe(
-  //       map(data => {
-  //         const lastId = data.length ? Math.max(...data.map(d => +d.id)) : 0;
-  //         return lastId + 1;
-  //       }),
-  //       switchMap(newId => {
-  //         const newTransaction = {
-  //           id: newId.toString(),
-  //           ...this.transactionForm.value,
-  //           date: new Date(this.transactionForm.value.date).toISOString()
-  //         };
-  //         return this.http.post(this.apiUrl, newTransaction);
-  //       }),
-  //       finalize(() => this.isLoading = false)
-  //     )
-  //     .subscribe({
-  //       next: res => {
-  //         this.snackBar.open('Registration Successful!', 'Close', {
-  //     duration: 3000,
-  //     verticalPosition: 'bottom',
-  //     horizontalPosition: 'center',
-  //     panelClass: ['snackbar-success']
-  //   });
-  //      this.transactionForm.reset();
-  //   setTimeout(() => this.router.navigate(['/transaction-list']), 3000);
-       
-  //       },
-  //       error: err => {
-  //         console.error('Error adding transaction:', err);
-  //       }
-  //     });
-  // }
+transHistory()
+{
+  this.router.navigate(['/transaction-list']);
+}
+  
   onSubmit() {
   if (this.transactionForm.invalid) return;
 
   this.isLoading = true;
-  const currentUser = this.userService.getLoggedInUser(); // ✅ required
+  const currentUser = this.userService.getLoggedInUser(); 
 
   this.http.get<any[]>(this.apiUrl)
     .pipe(
@@ -106,7 +73,7 @@ logout(): void {
       switchMap(newId => {
         const newTransaction = {
           id: newId.toString(),
-          userId: currentUser?.userId, // ✅ attach user ID
+          userId: currentUser?.userId, 
           ...this.transactionForm.value,
           date: new Date(this.transactionForm.value.date).toISOString()
         };

@@ -9,8 +9,6 @@ mat-form-field
     display: block;
 }
 .logout-button-container {
-  /* text-align: right;
-  margin: 1em; */
    position: fixed;
   top: 10px;
   right: 20px;

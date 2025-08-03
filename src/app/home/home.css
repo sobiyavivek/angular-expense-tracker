@@ -1,78 +1,45 @@
-.content-body
-{
-    min-height: 100%;
-    display: block;
-    padding: 60px 1rem ;
-    background-color: #f6f0d6 ;
+
+
+.container {
+  display: block;
+  width: 50%;
+  margin: auto;
 
 }
 
-.sidenav-container {
-  height: 64px;
-  margin-bottom: 16px;
-  width: 100%;
-  white-space: normal;
-  word-break: break-word;
-  
-}
-.container{
-background-color: var(--mat-sys-background);
-  color: var(--mat-sys-on-background);
-
+.btn {
+  margin: 25px;
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  border: 10px solid black;
+  border-radius: 20%;
 }
 .example-card {
-  display:grid;
-  max-width: 100%;
-  
+ 
+   display: block;
+  width: 100%;
+  margin: auto;
+
  
 
 }
-.header{
-  font-size: 24px;
-  font-weight: bold;
-  color: #3f51b5;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
+
 .example-header-image {
   background-image: url('https://www.moneypatrol.com/moneytalk/wp-content/uploads/2023/06/budget445.png');
   background-size: cover;
  
 }
 .example-button-row {
-  max-width: 600px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.sidenav {
-  width: 200px;
+  
+   margin: 50px;
+  display: inline-block;
+  width: 100px;
   
 }
-::ng-deep .small-toggle.mat-slide-toggle {
-  transform: scale(0.75); /* Adjust the scale as needed */
-  transform-origin: right center; /* Optional: align correctly */
-}
-.menu-button {
-  margin-right: 16px;
-}
 
-.spacer {
-  flex: 1 1 auto;
-}
 
-.brand {
-  font-weight: bold;
-  font-size: 20px;
-}
-.footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  justify-content: center;
-  text-align: center;
-  z-index: 100;
-}
+
+
+
+

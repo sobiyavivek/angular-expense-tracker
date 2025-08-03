@@ -38,11 +38,7 @@ export const routes: Routes = [
         component : TransactionForm,
         canActivate : [AuthGuard],
     },
-    {
-        path : 'transaction-list',
-        component : TransactionList,
-        canActivate : [AuthGuard],
-    },
+   
     {
   path: 'transaction-list',
   component: TransactionList,
@@ -50,8 +46,8 @@ export const routes: Routes = [
 },
     { 
     path: '**', 
-    component: NotFound,
-    redirectTo: '' 
+    component: NotFound
+   
     }
     
 ];
